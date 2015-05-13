@@ -24,6 +24,7 @@ public class MyWatchFace extends Activity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_my_watch_face);
     final WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_stub);
+
     stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener()
     {
 
@@ -43,7 +44,7 @@ public class MyWatchFace extends Activity
   @Override protected void onDestroy()
   {
     super.onDestroy();
-    ungegisterReceiver(mTimeInfoReceiver);
+    unregisterReceiver(mTimeInfoReceiver);
   }
 
   private final static IntentFilter INTENT_FILTER;
